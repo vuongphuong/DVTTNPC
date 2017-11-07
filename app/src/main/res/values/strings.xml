@@ -1,0 +1,129 @@
+<resources>
+    //====================Font============
+    <string name="main_font">Arial</string>
+    //====================String==================
+    <string name="app_name">ES_DVTT_NPC</string>
+    <string name="error">Đã xảy ra lỗi!</string>
+    <string name="common_ok">Đồng ý</string>
+    <string name="common_cancel">Hủy</string>
+    <string name="home">Trang chủ</string>
+    <string name="customer_info">Thông tin tài khoản</string>
+    <string name="huongdansudung">Hướng dẫn sử dụng</string>
+    <string name="dichvucapmoi">Dịch vụ cấp điện mới</string>
+    <string name="dichvutrongquatrinh">Dịch vụ trong quá trình thực hiện HĐMBĐ</string>
+    <string name="tracuuthongtin">Tra cứu thông tin</string>
+    <string name="dichvuhotro">Dịch vụ hỗ trợ</string>
+    <string name="huongdancacdichvu">Hướng dẫn các dịch vụ</string>
+    <string name="gioithieuhoatdong">Giới thiệu - Hoạt động</string>
+    <string name="capdienhaap">Dịch vụ cấp điện mới từ lưới điện hạ áp (220/380V)</string>
+    <string name="capdientrungap">Dịch vụ cấp điện mới từ lưới điện trung áp</string>
+    <string name="evn_npc">Tổng công ty điện lực Miền bắc</string>
+    <string name="npc_cc">Trung tâm chăm sóc khách hàng</string>
+    <string name="login">Đăng nhập</string>
+
+
+    /*==========================Menu===================================*/
+    <string-array name="title">
+        <item>Dịch vụ cấp điện mới</item>
+        <item>Thông tin khách hàng</item>
+        <item>Tra cứu thông tin</item>
+        <item>Thông báo</item>
+        <item>Dịch vụ hỗ trợ</item>
+        <item>Dịch vụ trong quá trình thực hiện HĐMBĐ</item>
+    </string-array>
+    <array name="icon">
+        <item>@drawable/ic_dangky</item>
+        <item>@drawable/ic_customer</item>
+        <item>@drawable/ic_search</item>
+        <item>@drawable/ic_thongbao2</item>
+        <item>@drawable/ic_dichvuhotro</item>
+        <item>@drawable/ic_yeucau2</item>
+    </array>
+    /*==========================Buy Electric===================================*/
+    <string-array name="Titlemuadienhaap">
+        <item>Mua điện sinh hoạt (01 pha, 03 pha)</item>
+        <item>Mua điện sinh hoạt (01 pha, 03 pha), sử dụng chung công tơ</item>
+        <item>Tách công tơ dùng chung</item>
+        <item>Mua điện ngoài sinh hoạt (01 pha, 03 pha), có công suất lớn nhất nhỏ hơn 40kW</item>
+        <item>Mua điện ngoài sinh hoạt (01 pha, 03 pha), có công suất lớn nhất ≥ 40kW</item>
+        <item>Mua điện ngắn hạn ngoài sinh hoạt (01 pha, 03 pha)</item>
+    </string-array>
+    <array name="Iconmuadienhaap">
+        <item>@drawable/ic_muadiensinhhoat</item>
+        <item>@drawable/ic_muadienchungcongto</item>
+        <item>@drawable/ic_muadientachcongto</item>
+        <item>@drawable/ic_muadienngoaisinhhoatnho40</item>
+        <item>@drawable/ic_muadienngoalon40</item>
+        <item>@drawable/ic_muadienngoaisinhhoatnganhan</item>
+    </array>
+
+    <string-array name="Titlemuadientrungap">
+        <item>Mua điện sinh hoạt</item>
+        <item>Mua điện ngoài sinh hoạt công suất đến 2.000kVA</item>
+        <item>Mua điện ngoài sinh hoạt công  suất lớn hơn 2.000kVA</item>
+        <item>Mua buôn điện nông thôn</item>
+    </string-array>
+    <array name="Iconmuadientrungap">
+        <item>@drawable/ic_muadiensinhhoat</item>
+        <item>@drawable/ic_muadienngoaisinhhoatnho2000</item>
+        <item>@drawable/ic_muadienngoaisinhhoatlon2000</item>
+        <item>@drawable/ic_muabuondien</item>
+    </array>
+
+    /*========================== Search ===================================*/
+    <string-array name="TitleTraCuuThongTin">
+        <item>Lịch ngừng cấp điện</item>
+        <item>Tra cứu chỉ số điện</item>
+        <item>Tra cứu hóa đơn</item>
+        <item>Lịch ghi chỉ số công tơ</item>
+        <item>Tình hình tiêu thụ điện</item>
+        <item>Lịch sử thanh toán</item>
+        <item>Lịch sử treo tháo</item>
+        <item>Tra cứu điểm thu tiền điện</item>
+    </string-array>
+    <array name="IconTraCuuThongTin">
+        <item>@drawable/ic_ngungcapdien</item>
+        <item>@drawable/ic_chi_so_dien</item>
+        <item>@drawable/ic_hoadon</item>
+        <item>@drawable/ic_lichghichiso</item>
+        <item>@drawable/ic_tinhhinhtieuthu</item>
+        <item>@drawable/ic_lichsuthanhtoan</item>
+        <item>@drawable/ic_work_history</item>
+        <item>@drawable/ic_diadiem</item>
+    </array>
+
+    /*========================== Request ===================================*/
+    <string-array name="TitleYeuCauDichVu">
+        <item>Thay đổi công suất sử dụng điện/thay đổi loại công tơ 01 pha, 03 pha</item>
+        <item>Thay đổi công suất sử dụng điện/loại công tơ 01 pha, 03 pha (với khách hàng SX, KD, DV có công suất ≥ 40kW)</item>
+        <item>Thay đổi vị trí thiết bị đo đếm</item>
+        <item>Thay đổi mục đích sử dụng điện</item>
+        <item>Thay đổi định mức sử dụng điện</item>
+        <item>Thay đổi chủ thể Hợp đồng mua bán điện</item>
+        <item>Kiểm tra công tơ</item>
+        <item>Kiểm định công tơ</item>
+        <item>Cấp điện trở lại khi khách hàng đã tạm ngừng sử dụng điện</item>
+        <item>Cấp điện trở lại khi khách hàng bị tạm ngừng sử dụng điện cơ quan Nhà nước</item>
+        <item>Thay đổi hình thức thanh toán tiền điện</item>
+        <item>Xử lý báo mất điện</item>
+        <item>Gia hạn Hợp đồng mua bán điện</item>
+        <item>Chấm dứt hợp đồng mua bán điện</item>
+    </string-array>
+    <array name="IconYeuCauDichVu">
+        <item>@drawable/ic_thaydoicongsuat</item>
+        <item>@drawable/ic_thaydoicongsuat</item>
+        <item>@drawable/ic_thaydoivitri</item>
+        <item>@drawable/ic_thaydoimucdich</item>
+        <item>@drawable/ic_thaydoidinhmuc</item>
+        <item>@drawable/ic_thaydoichuthe</item>
+        <item>@drawable/ic_kiemtracongto</item>
+        <item>@drawable/ic_kiemdinhcongto</item>
+        <item>@drawable/ic_capdientrolai</item>
+        <item>@drawable/ic_capdientrolai</item>
+        <item>@drawable/ic_thaydoihinhthucthanhtoan</item>
+        <item>@drawable/ic_baomatdien</item>
+        <item>@drawable/ic_giahanhopdong</item>
+        <item>@drawable/ic_chamduthopdong</item>
+    </array>
+
+</resources>
