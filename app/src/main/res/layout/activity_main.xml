@@ -187,6 +187,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/menu_buyElectric"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -221,6 +222,7 @@
             android:background="@color/button_disable_light" />
 
         <LinearLayout
+            android:id="@+id/menu_DichVuSuDung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -255,6 +257,7 @@
             android:background="@color/button_disable_light" />
 
         <LinearLayout
+            android:id="@+id/menu_TraCuuThongTin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -289,6 +292,7 @@
             android:background="@color/button_disable_light" />
 
         <LinearLayout
+            android:id="@+id/menu_DichVuHoTro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -323,6 +327,7 @@
             android:background="@color/button_disable_light" />
 
         <LinearLayout
+            android:id="@+id/menu_huongDanDichVu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

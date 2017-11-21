@@ -9,14 +9,14 @@ import okhttp3.Headers;
 import okhttp3.RequestBody;
 
 /**
- * Created by hungh on 4/22/2017.
+ * Created by PhuongVV on 4/22/2017.
  */
 
 public class DVDChinhRequest implements BaseRequest {
 
     @Override
     public String getUrl() {
-        return Common.URL + "GetActiveRoots";
+        return Common.URL + "D_DVI_DCHINH/GetActiveRoots";
     }
 
     @Override

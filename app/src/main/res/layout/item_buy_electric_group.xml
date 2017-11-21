@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
@@ -10,10 +12,10 @@
         android:padding="@dimen/_5sdp">
 
         <ImageView
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_22sdp"
             android:layout_gravity="center"
-            android:background="@drawable/ic_chi_huong"/>
+            android:background="@drawable/ic_chi_huong" />
 
         <TextView
             android:id="@+id/i_buy_electric_group_Title"
@@ -22,7 +24,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/_15sdp"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/_15sp"/>
+            android:textSize="@dimen/_15sp" />
     </LinearLayout>
 
 </LinearLayout>

@@ -8,7 +8,7 @@ import okhttp3.Call;
 import okhttp3.Response;
 
 /**
- * Created by My_PC on 9/5/2017.
+ * Created by PhuongVV on 9/5/2017.
  */
 public class ServerError extends BaseError {
 
@@ -25,6 +25,10 @@ public class ServerError extends BaseError {
             error = gson.fromJson(response.body().string(), Error.class);
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            {
+                e.printStackTrace();
+            }
         }
     }
 

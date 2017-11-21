@@ -12,6 +12,10 @@ import java.util.ArrayList;
  */
 
 public class BuyElectricEntity implements Parcelable {
+    @SerializedName("TEN_CQUAN")
+    String TEN_CQUAN;
+    @SerializedName("TEN_DDIEN")
+    String TEN_DDIEN;
     @SerializedName("TEN_NGUOIYCAU")
     String TEN_NGUOIYCAU;
     @SerializedName("DTHOAI")
@@ -31,21 +35,34 @@ public class BuyElectricEntity implements Parcelable {
     @SerializedName("DCHI_DDIEN")
     String DCHI_DDIEN;
     @SerializedName("CONG_SUAT")
-    String CONG_SUAT;
+    int CONG_SUAT;
     @SerializedName("MASO_THUE")
     String MASO_THUE;
     @SerializedName("TKHOAN_KHANG")
     String TKHOAN_KHANG;
     @SerializedName("MA_NHANG")
     String MA_NHANG;
-    @SerializedName("MA_LOAI_YCAU")
-    String MA_LOAI_YCAU;
+    @SerializedName("MA_LOAI_YCAU_MOI")
+    String MA_LOAI_YCAU_MOI;
+    @SerializedName("SO_HO")
+    int SO_HO;
+    @SerializedName("LOAI_CAPMOI")
+    String LOAI_CAPMOI;
+    @SerializedName("THOI_GIAN")
+    String THOI_GIAN;
     @SerializedName("LstUploadFiles")
     ArrayList<LoaiGToEntity> LstUploadFiles;
+    @SerializedName("LstDChung")
+    ArrayList<HoDungChungEntity> LstDChung;
+    @SerializedName("NGUON_TNHAN")
+    String NGUON_TNHAN;
 
-    public BuyElectricEntity(){}
+    public BuyElectricEntity() {
+    }
 
     protected BuyElectricEntity(Parcel in) {
+        TEN_CQUAN = in.readString();
+        TEN_DDIEN = in.readString();
         TEN_NGUOIYCAU = in.readString();
         DTHOAI = in.readString();
         EMAIL = in.readString();
@@ -55,16 +72,23 @@ public class BuyElectricEntity implements Parcelable {
         MA_DVIDCHINH = in.readString();
         DCHI_NGUOIYCAU = in.readString();
         DCHI_DDIEN = in.readString();
-        CONG_SUAT = in.readString();
+        CONG_SUAT = in.readInt();
         MASO_THUE = in.readString();
         TKHOAN_KHANG = in.readString();
         MA_NHANG = in.readString();
-        MA_LOAI_YCAU = in.readString();
+        MA_LOAI_YCAU_MOI = in.readString();
+        SO_HO = in.readInt();
+        LOAI_CAPMOI = in.readString();
+        THOI_GIAN = in.readString();
+        NGUON_TNHAN = in.readString();
         LstUploadFiles = in.createTypedArrayList(LoaiGToEntity.CREATOR);
+        LstDChung = in.createTypedArrayList(HoDungChungEntity.CREATOR);
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(TEN_CQUAN);
+        dest.writeString(TEN_DDIEN);
         dest.writeString(TEN_NGUOIYCAU);
         dest.writeString(DTHOAI);
         dest.writeString(EMAIL);
@@ -74,12 +98,17 @@ public class BuyElectricEntity implements Parcelable {
         dest.writeString(MA_DVIDCHINH);
         dest.writeString(DCHI_NGUOIYCAU);
         dest.writeString(DCHI_DDIEN);
-        dest.writeString(CONG_SUAT);
+        dest.writeInt(CONG_SUAT);
         dest.writeString(MASO_THUE);
         dest.writeString(TKHOAN_KHANG);
         dest.writeString(MA_NHANG);
-        dest.writeString(MA_LOAI_YCAU);
+        dest.writeString(MA_LOAI_YCAU_MOI);
+        dest.writeInt(SO_HO);
+        dest.writeString(LOAI_CAPMOI);
+        dest.writeString(THOI_GIAN);
+        dest.writeString(NGUON_TNHAN);
         dest.writeTypedList(LstUploadFiles);
+        dest.writeTypedList(LstDChung);
     }
 
     @Override
@@ -98,6 +127,22 @@ public class BuyElectricEntity implements Parcelable {
             return new BuyElectricEntity[size];
         }
     };
+
+    public String getTEN_CQUAN() {
+        return TEN_CQUAN;
+    }
+
+    public void setTEN_CQUAN(String TEN_CQUAN) {
+        this.TEN_CQUAN = TEN_CQUAN;
+    }
+
+    public String getTEN_DDIEN() {
+        return TEN_DDIEN;
+    }
+
+    public void setTEN_DDIEN(String TEN_DDIEN) {
+        this.TEN_DDIEN = TEN_DDIEN;
+    }
 
     public String getTEN_NGUOIYCAU() {
         return TEN_NGUOIYCAU;
@@ -171,11 +216,11 @@ public class BuyElectricEntity implements Parcelable {
         this.DCHI_DDIEN = DCHI_DDIEN;
     }
 
-    public String getCONG_SUAT() {
+    public int getCONG_SUAT() {
         return CONG_SUAT;
     }
 
-    public void setCONG_SUAT(String CONG_SUAT) {
+    public void setCONG_SUAT(int CONG_SUAT) {
         this.CONG_SUAT = CONG_SUAT;
     }
 
@@ -203,12 +248,44 @@ public class BuyElectricEntity implements Parcelable {
         this.MA_NHANG = MA_NHANG;
     }
 
-    public String getMA_LOAI_YCAU() {
-        return MA_LOAI_YCAU;
+    public String getMA_LOAI_YCAU_MOI() {
+        return MA_LOAI_YCAU_MOI;
     }
 
-    public void setMA_LOAI_YCAU(String MA_LOAI_YCAU) {
-        this.MA_LOAI_YCAU = MA_LOAI_YCAU;
+    public void setMA_LOAI_YCAU_MOI(String MA_LOAI_YCAU) {
+        this.MA_LOAI_YCAU_MOI = MA_LOAI_YCAU;
+    }
+
+    public int getSO_HO() {
+        return SO_HO;
+    }
+
+    public void setSO_HO(int SO_HO) {
+        this.SO_HO = SO_HO;
+    }
+
+    public String getLOAI_CAPMOI() {
+        return LOAI_CAPMOI;
+    }
+
+    public void setLOAI_CAPMOI(String LOAI_CAPMOI) {
+        this.LOAI_CAPMOI = LOAI_CAPMOI;
+    }
+
+    public String getTHOI_GIAN() {
+        return THOI_GIAN;
+    }
+
+    public void setTHOI_GIAN(String THOI_GIAN) {
+        this.THOI_GIAN = THOI_GIAN;
+    }
+
+    public String getNGUON_TNHAN() {
+        return NGUON_TNHAN;
+    }
+
+    public void setNGUON_TNHAN(String NGUON_TNHAN) {
+        this.NGUON_TNHAN = NGUON_TNHAN;
     }
 
     public ArrayList<LoaiGToEntity> getLstUploadFiles() {
@@ -217,5 +294,13 @@ public class BuyElectricEntity implements Parcelable {
 
     public void setLstUploadFiles(ArrayList<LoaiGToEntity> lstUploadFiles) {
         LstUploadFiles = lstUploadFiles;
+    }
+
+    public ArrayList<HoDungChungEntity> getLstDChung() {
+        return LstDChung;
+    }
+
+    public void setLstDChung(ArrayList<HoDungChungEntity> lstDChung) {
+        LstDChung = lstDChung;
     }
 }

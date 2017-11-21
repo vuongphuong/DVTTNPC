@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="40dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="40dp"
+    android:background="@drawable/detail_dialog"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Thêm thông tin hộ dùng chung"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Họ tên chủ hộ"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/_14sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/dl_add_ho_dung_chung_etName"
+        android:hint="Nhập họ tên chủ hộ dùng chung"
+        android:maxLength="150"
+        style="@style/editTextStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/_14sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/dl_add_ho_dung_chung_etAddress"
+        android:hint="Địa chỉ của hộ dùng chung công tơ"
+        style="@style/editTextStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại liên hệ"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/_14sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/dl_add_ho_dung_chung_etPhone"
+        android:inputType="phone"
+        android:hint="Nhập số điện thoại của chủ hộ dùng chung"
+        android:maxLength="15"
+        style="@style/editTextStyle" />
+
+    <Button
+        android:id="@+id/dl_add_ho_dung_chung_btnAdd"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/detail_btn"
+        android:text="Thêm hộ dùng chung"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_13sp" />
+
+</LinearLayout>

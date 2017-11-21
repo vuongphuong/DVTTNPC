@@ -57,7 +57,7 @@ public class CurrentPrefers extends BasePrefers {
         return getPreferences().getString(KEY_PASSWORD, "");
     }
 
-    //----------------Save Password------------------------
+    //----------------Save Checkbox------------------------
     public void savePass(boolean isSaveLogin) {
         getEditor().putBoolean(KEY_SAVE_PASS, isSaveLogin).commit();
     }

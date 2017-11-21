@@ -1,12 +1,20 @@
 package com.es.es_dvtt_npc.Helper;
 
+import android.app.DatePickerDialog;
+import android.content.Context;
+import android.graphics.Color;
+import android.widget.DatePicker;
+import android.widget.EditText;
+
+import com.es.es_dvtt_npc.R;
+
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Created by tuananh on 5/18/16.
+ * Created by PhuongVV on 5/18/16.
  */
 public class DateHelper {
 
@@ -18,10 +26,9 @@ public class DateHelper {
     }
 
 
-
     public static Date dateFromString(String aDate, String aFormat) {
 
-        if(aDate==null) return null;
+        if (aDate == null) return null;
         ParsePosition pos = new ParsePosition(0);
         SimpleDateFormat simpledateformat = new SimpleDateFormat(aFormat);
         Date stringDate = simpledateformat.parse(aDate, pos);
@@ -29,20 +36,19 @@ public class DateHelper {
 
     }
 
-    public static String stringFromDate(Date aDate, String format){
-        Calendar cal= Calendar.getInstance();
+    public static String stringFromDate(Date aDate, String format) {
+        Calendar cal = Calendar.getInstance();
         SimpleDateFormat date = new SimpleDateFormat(format);
 
         return date.format(aDate);
     }
 
     public static String stringFromDateBasic(Date date) {
-        return stringFromDate(date, "yyyy-MM-dd");
+        return stringFromDate(date, "dd/MM/yyyy");
     }
 
 
-
-//    public static String DateDiff(long time, Activity act){
+    //    public static String DateDiff(long time, Activity act){
 //        Resources res = act.getResources();
 //
 //        String rs;
@@ -121,5 +127,33 @@ public class DateHelper {
 //        }
 //    }
 
+    public static void dateDialogPicker(final Context context, final EditText editText) {
+        final Calendar calendar = Calendar.getInstance();
+        int mYear, mMonth, mDay;
+        mYear = calendar.get(Calendar.YEAR);
+        mMonth = calendar.get(Calendar.MONTH);
+        mDay = calendar.get(Calendar.DAY_OF_MONTH);
 
+        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, monthOfYear);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                Calendar cal = Calendar.getInstance();
+                cal.roll(Calendar.DATE, -1);
+                if (calendar.getTime().before(cal.getTime())) {
+                    //  myDate must be yesterday or earlier
+                    editText.setText(DateHelper.stringFromDateBasic(calendar.getTime()));
+                } else {
+                    //  myDate must be today or later
+                    AppAlertDialog.showAlertDialogGreen(context, "Lỗi", Color.RED,"Bạn không thể nhập ngày lớn hơn ngày hiện tại" , Color.WHITE, context.getString(R.string.common_ok), Color.RED);
+                    editText.setText("");
+                }
+            }
+        };
+
+        DatePickerDialog dpDialog = new DatePickerDialog(context, 0, listener, mYear, mMonth, mDay); // theme 3 easy to use
+        dpDialog.show();
+    }
 }

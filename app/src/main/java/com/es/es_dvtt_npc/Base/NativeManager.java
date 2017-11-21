@@ -3,7 +3,7 @@ package com.es.es_dvtt_npc.Base;
 import android.support.v4.app.Fragment;
 
 /**
- * Created by phuon on 5/25/2016.
+ * Created by PhuongVV on 5/25/2016.
  */
 public interface NativeManager {
 

@@ -3,6 +3,7 @@ package com.es.es_dvtt_npc.BaseAPI.Reponse;
 
 import com.es.es_dvtt_npc.BaseAPI.BaseResponse;
 import com.es.es_dvtt_npc.Data.Object.CityEntity;
+import com.es.es_dvtt_npc.Helper.Common;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -22,6 +23,7 @@ import okhttp3.Response;
 public class DVDChinhResponse extends BaseResponse {
 
     private ArrayList<CityEntity> cityEntities;
+    private String result,message;
 
     public DVDChinhResponse(Response data) throws IOException, JSONException {
         super(data);
@@ -30,23 +32,24 @@ public class DVDChinhResponse extends BaseResponse {
     @Override
     protected void parseData(Response data) throws IOException {
         Gson gson = new Gson();
-//        ManagementUnitEntity managementUnitEntity = gson.fromJson(data.body().string(),ManagementUnitEntity.class);
-//        managementUnitEntities = new ArrayList<>();
-//        managementUnitEntities.add(managementUnitEntity);
-        Type type = new TypeToken<ArrayList<CityEntity>>() {
-        }.getType();
+        Type type = new TypeToken<ArrayList<CityEntity>>() {}.getType();
         String jsonData = data.body().string();
-        JSONObject Jobject = null;
+        JSONObject jsonObject = null;
         try {
-            Jobject = new JSONObject(jsonData);
-            cityEntities = gson.fromJson(Jobject.optString("Data"), type);
+            jsonObject = new JSONObject(jsonData);
+            result = jsonObject.optString(Common.RESULT);
+            if (result.equals(Common.FALSE))
+                message = jsonObject.optString(Common.MESSAGE);
+            else
+                cityEntities = gson.fromJson(jsonObject.optString(Common.DATA), type);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
     }
 
     public ArrayList<CityEntity> getCityEntities() {
         return cityEntities;
     }
+
+    public String getMessage(){return message;}
 }

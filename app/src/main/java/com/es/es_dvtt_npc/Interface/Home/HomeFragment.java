@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.es.es_dvtt_npc.Base.ActionbarInfo;
 import com.es.es_dvtt_npc.Base.BaseFragment;
 import com.es.es_dvtt_npc.BaseAPI.BaseResponse;
 import com.es.es_dvtt_npc.BaseAPI.Reponse.DVDChinhResponse;
@@ -26,6 +27,7 @@ import com.es.es_dvtt_npc.Helper.AutoScrollViewPager;
 import com.es.es_dvtt_npc.Helper.Common;
 import com.es.es_dvtt_npc.Helper.Singleton;
 import com.es.es_dvtt_npc.Interface.BuyElectric.BuyElectricFragment;
+import com.es.es_dvtt_npc.Interface.Customer.CustomerFragment;
 import com.es.es_dvtt_npc.Interface.Login.LoginFragment;
 import com.es.es_dvtt_npc.Interface.Request.RequestFragment;
 import com.es.es_dvtt_npc.Interface.Search.SearchFragment;
@@ -41,7 +43,7 @@ import okhttp3.Response;
  * Created by My_PC on 10/31/2017.
  */
 
-public class HomeFragment extends BaseFragment implements ResponseListener {
+public class HomeFragment extends BaseFragment implements ResponseListener,ActionbarInfo {
     private AutoScrollViewPager autoScrollViewPager;
     private ImageView ivHotLine;
     private GridView grMenu;
@@ -97,7 +99,7 @@ public class HomeFragment extends BaseFragment implements ResponseListener {
         grMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-               itemClick(i);
+                itemClick(i);
             }
         });
         autoScrollViewPager.startAutoScroll();
@@ -105,7 +107,7 @@ public class HomeFragment extends BaseFragment implements ResponseListener {
         autoScrollViewPager.setCycle(true);
         autoScrollViewPager.setStopScrollWhenTouch(true);
 
-        PagerAdapter adapter = new AutoScrollPageAdapter(getContext(),imageId);
+        PagerAdapter adapter = new AutoScrollPageAdapter(getContext(), imageId);
         autoScrollViewPager.setAdapter(adapter);
 
     }
@@ -113,63 +115,44 @@ public class HomeFragment extends BaseFragment implements ResponseListener {
 //endregion
 
     //region Navigation
-
+    @Override
+    public String getActionbarTitle() {
+        return getString(R.string.home);
+    }
 
 //endregion
 
     //region Control Action
-    void itemClick(int i){
-        switch (i){
+    void itemClick(int i) {
+        switch (i) {
             case 0:
                 BuyElectricFragment buyElectricFragment = new BuyElectricFragment();
-                mNativeManager.addFragment(buyElectricFragment,"Buy Electric");
+                mNativeManager.addFragment(buyElectricFragment, "Buy Electric");
                 break;
             case 1:
-                if (!Singleton.getInstance().isLogin){
+                if (!Singleton.getInstance().isLogin) {
                     LoginFragment loginFragment = new LoginFragment();
-                    mNativeManager.addFragment(loginFragment,"Login");
-                }else {
-
+                    mNativeManager.addFragment(loginFragment, "Login");
+                } else {
+                    CustomerFragment customerFragment = new CustomerFragment();
+                    mNativeManager.addFragment(customerFragment,"Customer");
                 }
                 break;
             case 2:
                 SearchFragment searchFragment = new SearchFragment();
-                mNativeManager.addFragment(searchFragment,"Search");
+                mNativeManager.addFragment(searchFragment, "Search");
+                break;
+            case 3:
+                break;
+            case 4:
                 break;
             case 5:
                 RequestFragment requestFragment = new RequestFragment();
-                mNativeManager.addFragment(requestFragment,"Request");
+                mNativeManager.addFragment(requestFragment, "Request");
                 break;
         }
     }
 
-    @Override
-    public BaseResponse parse(int requestId, Call call, Response response) throws Exception {
-        return new DVDChinhResponse(response);
-    }
-
-    @Override
-    public void onResponse(int requestId, BaseResponse response) {
-        if (requestId == Common.REQUEST_DVDCHINH){
-            DVDChinhResponse dvdChinhResponse = (DVDChinhResponse) response;
-        }
-    }
-
-    @Override
-    public void onError(int requestId, Exception e) {
-        if (e instanceof ServerError) {
-            ServerError serverError = (ServerError) e;
-            AppLog.d(getString(R.string.app_name), serverError.getError().getErrorDescription());
-            AppAlertDialog.showAlertDialogGreen(getContext(),"Lỗi", Color.RED, getString(R.string.error), Color.WHITE, getString(R.string.common_ok), Color.RED);
-        } else if (e instanceof ParserError) {
-            AppLog.d(getString(R.string.app_name), "parser data error request: " + requestId);
-        } else if (e instanceof AuthFailureError) {
-            AppLog.d(getString(R.string.app_name), "AuthFailure error request: " + requestId);
-        } else {
-            AppLog.d(getString(R.string.app_name), "unKnown error request: " + requestId);
-            AppAlertDialog.showAlertDialogGreen(getContext(), "Lỗi", Color.RED, "Vui lòng xem lại kết nối đến service", Color.WHITE, getString(R.string.common_ok), Color.RED);
-        }
-    }
 //endregion
 
     //region Control Delegate
@@ -179,7 +162,33 @@ public class HomeFragment extends BaseFragment implements ResponseListener {
 
     //region API
 
+    @Override
+    public BaseResponse parse(int requestId, Call call, Response response) throws Exception {
+        return new DVDChinhResponse(response);
+    }
 
+    @Override
+    public void onResponse(int requestId, BaseResponse response) {
+        if (requestId == Common.REQUEST_DVDCHINH) {
+            DVDChinhResponse dvdChinhResponse = (DVDChinhResponse) response;
+        }
+    }
+
+    @Override
+    public void onError(int requestId, Exception e) {
+        if (e instanceof ServerError) {
+            ServerError serverError = (ServerError) e;
+            AppLog.d(getString(R.string.app_name), serverError.getError().getErrorDescription());
+            AppAlertDialog.showAlertDialogGreen(getContext(), "Lỗi", Color.RED, getString(R.string.error), Color.WHITE, getString(R.string.common_ok), Color.RED);
+        } else if (e instanceof ParserError) {
+            AppLog.d(getString(R.string.app_name), "parser data error request: " + requestId);
+        } else if (e instanceof AuthFailureError) {
+            AppLog.d(getString(R.string.app_name), "AuthFailure error request: " + requestId);
+        } else {
+            AppLog.d(getString(R.string.app_name), "unKnown error request: " + requestId);
+            AppAlertDialog.showAlertDialogGreen(getContext(), "Lỗi", Color.RED, "Vui lòng xem lại kết nối đến service", Color.WHITE, getString(R.string.common_ok), Color.RED);
+        }
+    }
 //endregion
 
     //region Helper

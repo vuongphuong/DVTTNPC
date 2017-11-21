@@ -8,7 +8,7 @@ import okhttp3.Call;
 import okhttp3.Response;
 
 /**
- * Created by My_PC on 9/5/2017.
+ * Created by PhuongVV on 9/5/2017.
  */
 public class AuthFailureError extends BaseError {
     private Error error;

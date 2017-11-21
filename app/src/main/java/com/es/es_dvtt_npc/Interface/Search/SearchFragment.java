@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
 
+import com.es.es_dvtt_npc.Base.ActionbarInfo;
 import com.es.es_dvtt_npc.Base.BaseFragment;
 import com.es.es_dvtt_npc.Helper.Common;
 import com.es.es_dvtt_npc.Interface.BuyElectric.BuyElectricAdapter;
@@ -24,7 +25,7 @@ import java.util.List;
  * Created by My_PC on 11/1/2017.
  */
 
-public class SearchFragment extends BaseFragment {
+public class SearchFragment extends BaseFragment implements ActionbarInfo {
     private ListView lvItem;
     String[] title;
     TypedArray image;
@@ -59,6 +60,11 @@ public class SearchFragment extends BaseFragment {
 //endregion
 
     //region Navigation
+
+    @Override
+    public String getActionbarTitle() {
+        return getString(R.string.tracuuthongtin);
+    }
 
 
 //endregion

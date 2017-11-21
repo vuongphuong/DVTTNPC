@@ -59,7 +59,6 @@ public class CallBackWrapper implements Callback {
                     e.printStackTrace();
                     deliverUIError(new ParserError(call, response));
                 }
-
                 return;
             }
                 /*
@@ -67,9 +66,10 @@ public class CallBackWrapper implements Callback {
                  */
             if (statusCode == HttpURLConnection.HTTP_UNAUTHORIZED
                     || statusCode == HttpURLConnection.HTTP_FORBIDDEN) {
-
                 deliverUIError(new AuthFailureError(call, response));
-            } else {
+            } else if (statusCode == HttpURLConnection.HTTP_INTERNAL_ERROR){
+                deliverUIError(new ServerError(call, response));
+            }else {
                 deliverUIError(new ServerError(call, response));
             }
         }

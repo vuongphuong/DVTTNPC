@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.es.es_dvtt_npc.Base.AdapterDelegate;
 import com.es.es_dvtt_npc.Interface.Home.MenuItem;
 import com.es.es_dvtt_npc.R;
 import com.makeramen.roundedimageview.RoundedImageView;

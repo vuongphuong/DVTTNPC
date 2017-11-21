@@ -51,15 +51,23 @@ import java.util.Date;
 public class Common {
     public static String POST = "POST";
     public static String GET = "GET";
-//    public static String URL = "http://192.168.68.101:9040/";
-    public static String URL = "http://192.168.68.101:2883/";
+    //    public static String URL = "http://192.168.68.101:9040/api/";
+//    public static String URL = "http://192.168.68.101:2883/api/";
+    public static String URL = "http://192.168.68.112:37952/api/";
+    public static String BASE_URL = "http://adminapp.npc.com.vn/appapis/";
+    public static String BASE_URL_SERVICE = "http://116.212.37.61:8000/Service1.svc/";
 
     public static final int REQUEST_DVDCHINH = 100;
     public static final int REQUEST_GET_CHILD_DVDCHINH_HUYEN = 101;
     public static final int REQUEST_GET_CHILD_DVDCHINH_XA = 102;
     public static final int REQUEST_POST_CAP_MOI_DIEN_SINH_HOAT = 103;
-    public static final int REQUEST_REPORT_TUTI = 104;
+    public static final int REQUEST_POST_CAP_MOI_DIEN_NGOAI_SINH_HOAT = 104;
+    public static final int REQUEST_GET_NGAN_HANG = 105;
+    public static final int REQUEST_POST_THAY_DOI_CONG_SUAT = 106;
+    public static final int REQUEST_LOGIN = 107;
+    public static final int REQUEST_CUSTOMER_INFO = 108;
 
+    public static final int SELECT_PHOTO_FROM_LIBRARY = 1;
     public static final int TAKE_PHOTO_BY_CAMERA = 2;
 
     public static final int REQUEST_PERMISSION_READ_PHONE = 110;
@@ -74,13 +82,31 @@ public class Common {
     public static final String PROGRAM_PATH = "/IMAGE_DVTT_NPC/";
     public static final String PROGRAM_DB_PATH = "/TTHT/DB/";
     public static final String PROGRAM_DB_BACKUP_PATH = "/TTHT/DB/BACKUP/";
-    public static final String PROGRAM_PHOTOS_PATH = "/TTHT/PHOTOS/";
-    public static final String DATABASE_NAME = "TTHT.s3db";
+    public static final String RESULT = "Result";
+    public static final String MESSAGE = "Message";
+    public static final String DATA = "Data";
+    public static final String TRUE = "true";
+    public static final String FALSE = "false";
 
 
-    public static final String EXTRA_IS_METER_ABLE = "isMeterAble";
-    public static final String EXTRA_METER_DETAIL = "meter_detail";
-    public static final String EXTRA_REPORT_DETAIL = "report_detail";
+    public static final int CAP_MOI_SINH_HOAT = 1001;
+    public static final int CAP_MOI_SINH_HOAT_TRUNG_AP = 10011;
+    public static final int CAP_MOI_DUNG_CHUNG = 1002;
+    public static final int TACH_CONG_TO = 1003;
+    public static final int NGOAI_SINH_HOAT_NHO_HON_40 = 1004;
+    public static final int NGOAI_SINH_HOAT_LON_HON_40 = 1005;
+    public static final int NGOAI_SINH_HOAT_NGAN_HAN = 1006;
+    public static final int NGOAI_SINH_HOAT_TRUNG_AP_NHO_2000 = 1007;
+    public static final int NGOAI_SINH_HOAT_TRUNG_AP_LON_2000 = 1009;
+    public static final int MUA_BUON_DIEN_NONG_THON = 1008;
+    public static final int YEU_CAU_THAY_DOI_CONG_SUAT = 1009;
+    public static final int YEU_CAU_THAY_DOI_CONG_SUAT_LON_40 = 1010;
+    public static final int YEU_CAU_THAY_DOI_VI_TRI = 1011;
+    public static final int YEU_CAU_THAY_DOI_CHU_THE = 1012;
+    public static final int YEU_CAU_GIA_HAN_HOP_DONG= 1013;
+    public static final int YEU_CAU_CHAM_DUT_HOP_DONG = 1014;
+    public static final int YEU_CAU_CAP_DIEN_TRO_LAI = 1015;
+    public static final int YEU_CAU_CAP_DIEN_TRO_LAI_CO_QUAN_NHA_NUOC = 1016;
     public static final String EXTRA_INSPECT_DETAIL = "inspect_detail";
 
     @SuppressLint("HardwareIds")
@@ -104,8 +130,55 @@ public class Common {
         }
     }
 
-    public enum FOLDER_NAME {
-        FOLDER_ANH_CONG_TO, FOLDER_ANH_TU, FOLDER_ANH_TI
+    /**GDN : Giấy đề nghị
+     BKTB: Bảng kê thiết bị sử dụng điện
+     BDPT: Bản đăng ký biểu đồ phụ tải
+     XDCTHD: Giấy tờ xác định chủ thể hợp đồng
+     GTTT: Giấy tờ tùy thân
+     GUQ: Giấy ủy quyền có chữ ký của các hộ dùng chung
+     CKHNTD: Giấy cam kết thanh toán hết nợ tiền điện với chủ HĐMBĐ đang dùng chung
+     XDMDSD: Giấy tờ xác định mục đích sử dụng điện
+     BLNH: Giấy bảo lãnh của Ngân hàng hoặc đặt cọc
+     DKDN: Thông tin đăng ký đấu nối
+     GPHD: Giấy phép hoạt động Điện lực
+     VBCP: Văn bản cho phép của Cơ quan thẩm quyền
+     KHAC: Các giấy tờ khác
+     CMT: Chứng minh thư*/
+    public static enum LOAI_GIAY_TO {
+        GIAY_DE_NGHI, BANG_KE_THIET_BI, DANG_KY_BIEU_DO_PHU_TAI, XAC_DINH_CHU_THE_HĐ, GIAY_TO_TUY_THAN, GIAY_UY_QUYEN, GIAY_CAM_KET_THANH_TOAN, GIAY_XAC_DINH_MUC_DICH
+        , GIAY_BAO_LANH, DANG_KY_DAU_NOI, GIAY_PHEP_HOAT_DONG, VAN_BAN_CHO_PHEP, KHAC, CHUNG_MINH_THU;
+        @Override
+        public String toString() {
+            if (GIAY_DE_NGHI == this)
+                return "GDN";
+            if (BANG_KE_THIET_BI == this)
+                return "BKTB";
+            if (DANG_KY_BIEU_DO_PHU_TAI == this)
+                return "BDPT";
+            if (XAC_DINH_CHU_THE_HĐ == this)
+                return "XDCTHD";
+            if (GIAY_TO_TUY_THAN == this)
+                return "GTTT";
+            if (GIAY_UY_QUYEN == this)
+                return "GUQ";
+            if (GIAY_CAM_KET_THANH_TOAN == this)
+                return "CKHNTD";
+            if (GIAY_XAC_DINH_MUC_DICH == this)
+                return "XDMDSD";
+            if (GIAY_BAO_LANH == this)
+                return "BLNH";
+            if (DANG_KY_DAU_NOI == this)
+                return "DKDN";
+            if (GIAY_PHEP_HOAT_DONG == this)
+                return "GPHD";
+            if (VAN_BAN_CHO_PHEP == this)
+                return "VBCP";
+            if (KHAC == this)
+                return "KHAC";
+            if (CHUNG_MINH_THU == this)
+                return "CMT";
+            return super.toString();
+        }
     }
 
     public static boolean isNetworkOnline(Context context) {
@@ -210,7 +283,6 @@ public class Common {
                     }
                 });
     }
-
     public static int dpToPx(Context context, int dp) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         return (int) ((dp * displayMetrics.density) + 0.5);
@@ -574,16 +646,16 @@ public class Common {
         return Calendar.getInstance().getTime();
     }
 
-    public static void CallNumber(FragmentActivity activity){
-        Intent callIntent=new Intent(Intent.ACTION_CALL, Uri.parse("tel: 19006769"));
-        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(activity,new String[]{Manifest.permission.CALL_PHONE},REQUEST_CALL);
-        }else {
+    public static void CallNumber(FragmentActivity activity) {
+        Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel: 19006769"));
+        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
+        } else {
             activity.startActivity(callIntent);
         }
     }
 
-    public static ArrayList<MenuItem> setItem(String[] title, TypedArray image){
+    public static ArrayList<MenuItem> setItem(String[] title, TypedArray image) {
         ArrayList<MenuItem> arrDrawerItems = new ArrayList<MenuItem>();
         for (int i = 0; i < title.length; i++) {
             MenuItem drawerItem = new MenuItem();
@@ -592,5 +664,19 @@ public class Common {
             arrDrawerItems.add(drawerItem);
         }
         return arrDrawerItems;
+    }
+
+    public static File CreatFile(String path){
+         File file = new File(path);
+
+        try {
+            if (file.exists()) {
+                file.delete();
+            }
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return  file;
     }
 }

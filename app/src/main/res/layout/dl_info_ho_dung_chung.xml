@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="40dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="40dp"
+    android:background="@drawable/detail_dialog"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/dl_info_ho_dung_chung_btnDismiss"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_gravity="right"
+        android:background="@drawable/ic_delete"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Thông tin hộ dùng chung"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_18sp" />
+
+  <ListView
+      android:id="@+id/dl_info_ho_dung_chung_lvInfo"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:dividerHeight="@dimen/_1sdp"
+      android:divider="@color/colorPrimary"/>
+
+</LinearLayout>

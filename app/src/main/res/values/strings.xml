@@ -6,8 +6,21 @@
     <string name="error">Đã xảy ra lỗi!</string>
     <string name="common_ok">Đồng ý</string>
     <string name="common_cancel">Hủy</string>
+    <string name="result">Result</string>
+    <string name="message">Message</string>
+    <string name="data">Data</string>
     <string name="home">Trang chủ</string>
     <string name="customer_info">Thông tin tài khoản</string>
+    <string name="lydo">Lý do thay đổi</string>
+    <string name="noidung">Nội dung yêu cầu</string>
+    <string name="capmoisinhhoat">Cấp mới điện sinh hoạt</string>
+    <string name="capmoisinhhoattrungap">Cấp mới điện sinh hoạt từ lưới trung áp</string>
+    <string name="dungchungcongto">Cấp mới điện dùng chung công tơ</string>
+    <string name="tachcongto">Tách công tơ dùng chung</string>
+    <string name="capdienngoaisinhhoat">Cấp điện ngoài sinh hoạt</string>
+    <string name="capdienngoaisinhhoatnganhan">Cấp điện ngoài sinh hoạt ngắn hạn</string>
+    <string name="capdienngoaisinhhoattrungap">Cấp điện ngoài sinh từ lưới trung áp</string>
+    <string name="muabuondien">Mua buôn điện nông thôn</string>
     <string name="huongdansudung">Hướng dẫn sử dụng</string>
     <string name="dichvucapmoi">Dịch vụ cấp điện mới</string>
     <string name="dichvutrongquatrinh">Dịch vụ trong quá trình thực hiện HĐMBĐ</string>
@@ -20,8 +33,33 @@
     <string name="evn_npc">Tổng công ty điện lực Miền bắc</string>
     <string name="npc_cc">Trung tâm chăm sóc khách hàng</string>
     <string name="login">Đăng nhập</string>
+    <string name="info_customer">Thông tin khách hàng</string>
+    <string name="info_required">Thông tin yêu cầu</string>
+    <string name="change_capacity">Thay đổi công suất</string>
+    <string name="change_position">Thay đổi vị trí thiết bị đo đếm</string>
+    <string name="change_purpose">Thay đổi mục đích sử dụng</string>
+    <string name="change_the_norm">Thay đổi định mức sử dụng</string>
+    <string name="person_singing_contract">Thay đổi chủ thể hợp đồng</string>
+    <string name="giahan">Gia hạn hợp đồng mua bán điện</string>
+    <string name="chamdut">Chấm dứt hợp đồng mua bán điện</string>
+    <string name="capdientrolai">Yêu cầu cấp điện trở lại</string>
+    <string name="confirm_logout_message">Bạn muốn đăng xuất tài khoản này ?</string>
+    <string name="confirm_yes">CÓ</string>
+    <string name="confirm_no">KHÔNG</string>
 
-
+    /*======================Loại hình cấp điện========================*/
+    <string-array name="LoaiCapDien">
+        <item>Cấp điện dài hạn</item>
+        <item>Cấp điện ngắn hạn</item>
+    </string-array>
+    /*======================Mục đích sử dụng========================*/
+    <string-array name="MucDichSuDung">
+        <item>Mục đích sản xuất</item>
+        <item>Mục đích kinh doanh</item>
+        <item>Cơ quan hành chính sự nghiệp</item>
+        <item>Bệnh viện</item>
+        <item>Trường học</item>
+    </string-array>
     /*==========================Menu===================================*/
     <string-array name="title">
         <item>Dịch vụ cấp điện mới</item>

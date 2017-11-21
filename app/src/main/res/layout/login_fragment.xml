@@ -69,6 +69,7 @@
         android:id="@+id/f_login_etPassword"
         android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_20sdp"
+        android:inputType="textPassword"
         style="@style/editTextStyle" />
 
     <CheckBox

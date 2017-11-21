@@ -1,19 +1,16 @@
 package com.es.es_dvtt_npc.BaseAPI.Request;
 
-import android.net.Uri;
 
 
 import com.es.es_dvtt_npc.BaseAPI.BaseRequest;
 import com.es.es_dvtt_npc.Helper.Common;
 
-import okhttp3.FormBody;
 import okhttp3.Headers;
-import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
 /**
- * Created by hungh on 5/7/2017.
+ * Created by PhuongVV on 5/7/2017.
  */
 
 public class CapMoiDienSinhHoatRequest implements BaseRequest {
@@ -43,7 +40,8 @@ public class CapMoiDienSinhHoatRequest implements BaseRequest {
 
     @Override
     public RequestBody getBody() {
-        RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM).addFormDataPart("file","model",RequestBody.create(IMAGE,model)).build();
+        RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM).
+                addFormDataPart("file","model",RequestBody.create(IMAGE,model)).build();
         return RequestBody.create(JSON,model);
     }
 

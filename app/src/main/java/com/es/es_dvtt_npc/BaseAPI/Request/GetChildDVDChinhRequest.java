@@ -16,7 +16,7 @@ public class GetChildDVDChinhRequest implements BaseRequest {
 
     @Override
     public String getUrl() {
-        return Common.URL + "GetChild?maDvictren=" + maDviCtren;
+        return Common.URL + "D_DVI_DCHINH/GetChild?maDvictren=" + maDviCtren;
     }
 
     @Override

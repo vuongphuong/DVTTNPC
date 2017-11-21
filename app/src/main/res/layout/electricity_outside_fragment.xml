@@ -31,7 +31,8 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvTenCoQuan"
+            android:id="@+id/f_electric_outside_tvTenCoQuan"
+            android:hint="Nhập họ tên người yêu cầu, tên cơ quan"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -57,7 +58,9 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvTenDaiDien"
+            android:id="@+id/f_electric_outside_tvTenDaiDien"
+            android:hint="Nhập tên người đại diện nếu là cơ quan"
+            android:maxLength="150"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -83,7 +86,8 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvMaSoThue"
+            android:id="@+id/f_electric_outside_tvMaSoThue"
+            android:hint="Nhập mã số thuế của cơ quan"
             style="@style/editTextStyle" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -108,7 +112,8 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvPeopleID"
+            android:id="@+id/f_electric_outside_tvPeopleID"
+            android:hint="Nhập số chứng minh thư hoặc thẻ căn cước"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -134,7 +139,8 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvDateRange"
+            android:id="@+id/f_electric_outside_tvDateRange"
+            android:hint="Chọn ngày cấp"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -160,7 +166,8 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvNoiCap"
+            android:id="@+id/f_electric_outside_tvNoiCap"
+            android:hint="Nhập nơi cấp"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -185,7 +192,9 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvNameCustomer"
+            android:id="@+id/f_electric_outside_tvNameCustomer"
+            android:hint="Nhập họ tên người yêu cầu"
+            android:maxLength="150"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -211,7 +220,10 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvPhone"
+            android:id="@+id/f_electric_outside_tvPhone"
+            android:hint="Nhập số điện thoại người yêu cầu để liên hệ"
+            android:maxLength="15"
+            android:inputType="phone"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -229,7 +241,8 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvEmail"
+            android:id="@+id/f_electric_outside_tvEmail"
+            android:hint="Nhập email người yêu cầu để liên hệ"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -254,29 +267,30 @@
                 android:textSize="@dimen/_14sp" />
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
             android:background="@drawable/detail_tv"
             android:orientation="horizontal">
 
             <Spinner
-                android:id="@+id/f_electricity_outsite_spTinh"
-                android:layout_width="0dp"
+                android:id="@+id/f_electric_outside_spTinh"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/_35sdp"
                 android:layout_gravity="center"
-                android:layout_weight="12"
                 android:background="@android:color/transparent"
                 android:gravity="center"
                 android:spinnerMode="dropdown" />
 
             <ImageView
-                android:layout_width="@dimen/_10sdp"
+                android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_10sdp"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
                 android:src="@drawable/ic_dropdown" />
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -300,29 +314,30 @@
                 android:textSize="@dimen/_14sp" />
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
             android:background="@drawable/detail_tv"
             android:orientation="horizontal">
 
             <Spinner
-                android:id="@+id/f_electricity_outsite_spHuyen"
-                android:layout_width="0dp"
+                android:id="@+id/f_electric_outside_spHuyen"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/_35sdp"
                 android:layout_gravity="center"
-                android:layout_weight="12"
                 android:background="@android:color/transparent"
                 android:gravity="center"
                 android:spinnerMode="dropdown" />
 
             <ImageView
-                android:layout_width="@dimen/_10sdp"
+                android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_10sdp"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
                 android:src="@drawable/ic_dropdown" />
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -346,29 +361,30 @@
                 android:textSize="@dimen/_14sp" />
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
             android:background="@drawable/detail_tv"
             android:orientation="horizontal">
 
             <Spinner
-                android:id="@+id/f_electricity_outsite_spXa"
-                android:layout_width="0dp"
+                android:id="@+id/f_electric_outside_spXa"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/_35sdp"
                 android:layout_gravity="center"
-                android:layout_weight="12"
                 android:background="@android:color/transparent"
                 android:gravity="center"
                 android:spinnerMode="dropdown" />
 
             <ImageView
-                android:layout_width="@dimen/_10sdp"
+                android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_10sdp"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
                 android:src="@drawable/ic_dropdown" />
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -379,7 +395,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nơi thường trú"
+                android:text="Địa chỉ giao dịch"
                 android:textColor="@color/colorText"
                 android:textSize="@dimen/_14sp" />
 
@@ -393,7 +409,8 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvNoiThuongTru"
+            android:id="@+id/f_electric_outside_tvNoiThuongTru"
+            android:hint="Nhập địa chỉ thường guao dịch của chủ hộ"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -419,10 +436,51 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvDiaChiSuDung"
+            android:id="@+id/f_electric_outside_tvDiaChiSuDung"
+            android:hint="Nhập địa chỉ sử dụng điện của chủ hộ"
             style="@style/editTextStyle" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mục đích sử dụng điên"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_14sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/detail_tv"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/f_electric_outside_spMucDichSuDung"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:src="@drawable/ic_dropdown" />
+        </RelativeLayout>
 
         <LinearLayout
+            android:id="@+id/f_electric_outside_llTitleSoHo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5sdp"
@@ -437,7 +495,8 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvSoHoDungChung"
+            android:id="@+id/f_electric_outside_tvSoHoDungChung"
+            android:hint="Nhập số hộ dùng chung"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -455,7 +514,8 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvCongSuatDangKy"
+            android:id="@+id/f_electric_outside_tvCongSuatDangKy"
+            android:hint="Nhập công suất đăng ký sử dụng"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -473,7 +533,8 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/f_electricity_supply_tvTaiKhoan"
+            android:id="@+id/f_electric_outside_tvTaiKhoan"
+            android:hint="Nhập số tài khoản ngân hàng"
             style="@style/editTextStyle" />
 
         <LinearLayout
@@ -490,31 +551,70 @@
                 android:textSize="@dimen/_14sp" />
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_35sdp"
             android:background="@drawable/detail_tv"
             android:orientation="horizontal">
 
             <Spinner
-                android:id="@+id/f_electricity_supply_spNganHang"
-                android:layout_width="0dp"
+                android:id="@+id/f_electric_outside_spNganHang"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/_35sdp"
                 android:layout_gravity="center"
-                android:layout_weight="12"
                 android:background="@android:color/transparent"
                 android:gravity="center"
                 android:spinnerMode="dropdown" />
 
             <ImageView
-                android:layout_width="@dimen/_10sdp"
+                android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_10sdp"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
                 android:src="@drawable/ic_dropdown" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loại hình cấp điện"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_14sp" />
         </LinearLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/detail_tv"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/f_electric_outside_spLoaiCDien"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:src="@drawable/ic_dropdown" />
+        </RelativeLayout>
         <LinearLayout
+            android:id="@+id/f_electric_outside_btnGiayToTuyThan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
@@ -530,7 +630,139 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="@dimen/_10sdp"
-                android:text=""
+                android:text="Giấy tờ tùy thân (cá nhân hoặc người đại diện hợp pháp của Tổ chức)"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_electric_outside_btnGiayXacDinhChuThe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/ic_upload" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Giấy tờ xác định chủ thể HĐMBĐ"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_electric_outside_btnGiayMucDichSuDung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/ic_upload" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Giấy tờ xác định mục đích sử dụng điện"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_electric_outside_btnGiayDangKyPhuTai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/ic_upload" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Bản đăng ký biểu đồ phụ tải. (Trường hợp khách hàng sản xuất, kinh doanh dịch vụ)"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_electric_outside_btnGiayBaoLanh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/ic_upload" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Giấy bảo lãnh của Ngân hàng hoặc đặt cọc"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_electric_outside_btnGiayThongTinDauNoi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/ic_upload" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Thông tin đăng ký đấu nối"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_electric_outside_btnGiayPhepHoatDong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/ic_upload" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Giấy phép hoạt động Điện lực (trường hợp mua buôn điện có công suất lớn hơn 50kVA)"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/_14sp" />
         </LinearLayout>
@@ -543,6 +775,7 @@
             android:weightSum="21">
 
             <Button
+                android:id="@+id/f_electric_outside_btnAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
@@ -557,6 +790,7 @@
                 android:layout_weight="1" />
 
             <Button
+                android:id="@+id/f_electric_outside_btnInfo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
@@ -567,6 +801,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/f_electric_outside_btnSend"
             android:layout_width="@dimen/_200sdp"
             android:layout_height="wrap_content"
             android:background="@drawable/detail_btn"

@@ -3,6 +3,7 @@ package com.es.es_dvtt_npc.Helper;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -10,10 +11,16 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.es.es_dvtt_npc.Data.Object.HoDungChungEntity;
+import com.es.es_dvtt_npc.Interface.ElectricitySupply.InfoDungChungAdapter;
 import com.es.es_dvtt_npc.R;
+
+import java.util.ArrayList;
 
 
 /**
@@ -104,5 +111,28 @@ public class AppAlertDialog {
         } catch(Exception ex) {
 
         }
+    }
+
+    public static void showInfoHoDungChung(Context context, Dialog dlInfoHo, ArrayList<HoDungChungEntity> hoDungChungEntities) {
+        if (dlInfoHo == null) {
+            dlInfoHo = new Dialog(context, R.style.full_screen_dialog);
+        }
+
+        //setting custom layout to dialog
+        dlInfoHo.setContentView(R.layout.dl_info_ho_dung_chung);
+        dlInfoHo.getWindow().setLayout(ViewPager.LayoutParams.MATCH_PARENT, ViewPager.LayoutParams.MATCH_PARENT);
+
+        Button btnDismiss = dlInfoHo.findViewById(R.id.dl_info_ho_dung_chung_btnDismiss);
+        ListView lvInfo = dlInfoHo.findViewById(R.id.dl_info_ho_dung_chung_lvInfo);
+        InfoDungChungAdapter infoDungChungAdapter = new InfoDungChungAdapter(context,hoDungChungEntities);
+        lvInfo.setAdapter(infoDungChungAdapter);
+        final Dialog finalDlInfoHo = dlInfoHo;
+        btnDismiss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finalDlInfoHo.dismiss();
+            }
+        });
+        dlInfoHo.show();
     }
 }
